@@ -7,4 +7,4 @@ Zadanie 1 | Docker
 ✗ 4.0 do powyższego należy dodać najnowszego Gradle’a oraz paczkę JDBC  
 ✗ SQLite w ramach projektu na Gradle (build.gradle)  
 ✗ 4.5 stworzyć przykład typu HelloWorld oraz uruchomienie aplikacji przez CMD oraz gradle  
-✗5.0 dodać konfigurację docker-compose  
+✗ 5.0 dodać konfigurację docker-compose  
