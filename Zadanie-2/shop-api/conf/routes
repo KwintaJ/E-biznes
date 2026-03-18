@@ -3,7 +3,10 @@
 # An example controller showing a sample home page
 GET     /                       controllers.HomeController.index()
 
-# 
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+# ProductController CRUD endpoints
 GET     /products               controllers.ProductController.getAll
 GET     /products/:id           controllers.ProductController.getById(id: Long)
 POST    /products               controllers.ProductController.add()
