@@ -12,7 +12,7 @@ Zadanie 2 | Scala
 ---
 Aplikacja na frameworku Play  
   
-✗ | 3.0 Kontroler do Produktów  
+✓ | 3.0 Kontroler do Produktów | [Commit](https://github.com/KwintaJ/E-biznes/commit/2f9e0e7993ed6f25ef03e99393bd2a6036477917)  
 ✗ | 3.5 Endpointy do kontrolera zgodnie z CRUD - dane pobierane z listy  
 ✗ | 4.0 Kontrolery do Kategorii oraz Koszyka + endpointy zgodnie z CRUD  
 ✗ | 4.5 Aplikacja uruchomiana na dockerze oraz skrypt uruchamiający aplikację via ngrok  
