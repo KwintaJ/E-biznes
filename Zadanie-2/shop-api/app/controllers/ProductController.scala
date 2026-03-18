@@ -15,4 +15,54 @@ class ProductController @Inject()(val controllerComponents: ControllerComponents
     Product(2, "Logitech MX Master 3S", 450.0)
   )
   
+  // 1. Show all (GET)
+  def getAll: Action[AnyContent] = Action {
+    Ok(Json.toJson(productsList))
+  }
+
+  // 2. Show by ID (GET)
+  def getById(id: Long): Action[AnyContent] = Action {
+    productsList.find(_.id == id) match {
+      case Some(product) => Ok(Json.toJson(product))
+      case None => NotFound(Json.obj("message" -> "Produkt nie znaleziony"))
+    }
+  }
+
+  // 3. Add (POST)
+  def add(): Action[JsValue] = Action(parse.json) { request =>
+    request.body.validate[Product].fold(
+      errors => BadRequest(Json.obj("message" -> "Błędne dane")),
+      product => {
+        productsList += product
+        Created(Json.toJson(product))
+      }
+    )
+  }
+
+  // 4. Update (PUT)
+  def update(id: Long): Action[JsValue] = Action(parse.json) { request =>
+    request.body.validate[Product].fold(
+      errors => BadRequest(Json.obj("message" -> "Błędne dane")),
+      updatedProduct => {
+        val index = productsList.indexWhere(_.id == id)
+        if (index >= 0) {
+          productsList.update(index, updatedProduct.copy(id = id))
+          Ok(Json.toJson(productsList(index)))
+        } else {
+          NotFound(Json.obj("message" -> "Produkt nie znaleziony"))
+        }
+      }
+    )
+  }
+
+  // 5. Delete (DELETE)
+  def delete(id: Long): Action[AnyContent] = Action {
+    val index = productsList.indexWhere(_.id == id)
+    if (index >= 0) {
+      productsList.remove(index)
+      Ok(Json.obj("message" -> "Produkt usunięty"))
+    } else {
+      NotFound(Json.obj("message" -> "Produkt nie znaleziony"))
+    }
+  }
 }
