@@ -1,5 +1,6 @@
 logs
 target
+.bash_history
 /.bsp
 /.idea
 /.idea_modules
