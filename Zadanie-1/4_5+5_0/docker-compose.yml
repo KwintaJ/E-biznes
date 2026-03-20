@@ -1,0 +1,6 @@
+services:
+    dev:
+        image: jankwinta/ebiznes-01-4.5:latest
+        container_name: ebiznes
+        stdin_open: true # -i
+        tty: true # -t
