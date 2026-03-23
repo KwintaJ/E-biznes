@@ -12,9 +12,8 @@ class CategoryController @Inject()(val controllerComponents: ControllerComponent
   // lista jako baza danych
   private val categoriesList = ListBuffer(
     Category(1, "Komponenty PC"),
-    Category(2, "Myszki"),
-    Category(3, "Klawiatury"),
-    Category(4, "Inne akcesoria")
+    Category(2, "Peryferia"),
+    Category(3, "Audio")
   )
 
   // 1. Show all (GET)

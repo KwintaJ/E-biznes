@@ -12,7 +12,18 @@ class ProductController @Inject()(val controllerComponents: ControllerComponents
   // lista jako baza danych
   private val productsList = ListBuffer(
     Product(1, "GeForce RTX 5080", 6000.0, 1),
-    Product(2, "Logitech MX Master 3S", 450.0, 2)
+    Product(2, "Intel Core i9-14900K", 2500.0, 1),
+    Product(3, "Płyta główna ASUS ROG Z790", 1800.0, 1),
+    Product(4, "Zasilacz be quiet 1000W", 900.0, 1),
+
+    Product(5, "Logitech MX Master 3S", 450.0, 2),
+    Product(6, "Klawiatura Keychron Q1", 850.0, 2),
+    Product(7, "Monitor Dell UltraSharp 27", 2200.0, 2),
+    Product(8, "Podkładka pod mysz SteelSeries XL", 120.0, 2),
+
+    Product(9, "Słuchawki Sony WH-1000XM5", 1400.0, 3),
+    Product(10, "Głośniki Edifier R1280DB", 550.0, 3),
+    Product(11, "Mikrofon Blue Yeti", 600.0, 3)
   )
   
   // 1. Show all (GET)
