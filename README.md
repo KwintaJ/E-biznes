@@ -10,7 +10,7 @@ Zadanie 1 | Docker
   
 Zadanie 2 | Scala  
 ---
-Aplikacja na frameworku Play  
+Aplikacja na frameworku Play | [Screen recording](https://github.com/KwintaJ/E-biznes/blob/main/Zadanie-2/Screen-recording.mov)  
   
 ✓ | **3.0** Kontroler do Produktów | [Commit](https://github.com/KwintaJ/E-biznes/commit/2f9e0e7993ed6f25ef03e99393bd2a6036477917)  
 ✓ | **3.5** Endpointy do kontrolera zgodnie z CRUD - dane pobierane z listy | [Commit](https://github.com/KwintaJ/E-biznes/commit/fb2ae85c281966c5d171e329ce2e80c6d42a3908)  
