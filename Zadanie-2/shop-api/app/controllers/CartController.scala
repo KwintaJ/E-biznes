@@ -11,6 +11,7 @@ class CartController @Inject()(val controllerComponents: ControllerComponents) e
 
   implicit val cartItemFormat: Format[CartItem] = Json.format[CartItem]
   private val cartItemsList: ListBuffer[CartItem] = ListBuffer[CartItem]()
+  private var nextId: Long = 1
 
   // 1. Show all (GET)
   def getAll: Action[AnyContent] = Action {
@@ -30,8 +31,20 @@ class CartController @Inject()(val controllerComponents: ControllerComponents) e
     request.body.validate[CartItem].fold(
       errors => BadRequest(Json.obj("message" -> "Błędne dane")),
       item => {
-        cartItemsList += item
-        Created(Json.toJson(item))
+        val existingItemIndex = cartItemsList.indexWhere(_.productId == item.productId)
+        
+        if (existingItemIndex >= 0) {
+          val existingItem = cartItemsList(existingItemIndex)
+          val updatedItem = existingItem.copy(quantity = existingItem.quantity + 1)
+          cartItemsList.update(existingItemIndex, updatedItem)
+          Ok(Json.toJson(updatedItem))
+        } else {
+          val itemWithNewId = item.copy(id = nextId)
+          nextId += 1
+          
+          cartItemsList += itemWithNewId
+          Created(Json.toJson(itemWithNewId))
+        }
       }
     )
   }
