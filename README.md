@@ -15,5 +15,5 @@ Aplikacja na frameworku Play
 ✓ | **3.0** Kontroler do Produktów | [Commit](https://github.com/KwintaJ/E-biznes/commit/2f9e0e7993ed6f25ef03e99393bd2a6036477917)  
 ✓ | **3.5** Endpointy do kontrolera zgodnie z CRUD - dane pobierane z listy | [Commit](https://github.com/KwintaJ/E-biznes/commit/fb2ae85c281966c5d171e329ce2e80c6d42a3908)  
 ✓ | **4.0** Kontrolery do Kategorii oraz Koszyka + endpointy zgodnie z CRUD | [Commit](https://github.com/KwintaJ/E-biznes/commit/8ea3fbaf9b15ad609420444744ab9e59735277af)  
-✗ | **4.5** Aplikacja uruchomiana na dockerze oraz skrypt uruchamiający aplikację via ngrok  
+✓ | **4.5** Aplikacja uruchomiana na dockerze oraz skrypt uruchamiający aplikację via ngrok | [Docker image](https://hub.docker.com/repository/docker/jankwinta/ebiznes-02/general) | [Commit](https://github.com/KwintaJ/E-biznes/commit/10d76bc8def6c461fda295447ece3fbe0fa0464a)  
 ✗ | **5.0** Konfiguracja CORS dla dwóch hostów dla metod CRUD  
