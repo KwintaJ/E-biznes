@@ -17,3 +17,12 @@ Aplikacja na frameworku Play | [Screen recording](https://github.com/KwintaJ/E-b
 ✓ | **4.0** Kontrolery do Kategorii oraz Koszyka + endpointy zgodnie z CRUD | [Commit](https://github.com/KwintaJ/E-biznes/commit/8ea3fbaf9b15ad609420444744ab9e59735277af)  
 ✓ | **4.5** Aplikacja uruchomiana na dockerze oraz skrypt uruchamiający aplikację via ngrok | [Docker image](https://hub.docker.com/repository/docker/jankwinta/ebiznes-02/general) | [Commit](https://github.com/KwintaJ/E-biznes/commit/10d76bc8def6c461fda295447ece3fbe0fa0464a)  
 ✓ | **5.0** Konfiguracja CORS dla dwóch hostów dla metod CRUD | [Commit](https://github.com/KwintaJ/E-biznes/commit/ac5d74abe6b928fbbe917de8ad4dd191180b0747)  
+  
+Zadanie 3 | Kotlin  
+---
+✗ | **3.0** Aplikacja kliencka w Kotlinie we frameworku Ktor, która pozwala na przesyłanie wiadomości na platformę Discord  
+✗ | **3.5** Odbieranie wiadomości użytkowników z platformy Discord skierowane do bota  
+✗ | **4.0** Lista kategorii na określone żądanie użytkownika  
+✗ | **4.5** Lista produktów wg żądanej kategorii  
+✗ | **5.0** Aplikacja obsługuje dodatkowo jedną z platform: Slack lub Messenger 
+ 
