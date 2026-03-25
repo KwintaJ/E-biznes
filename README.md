@@ -25,4 +25,3 @@ Zadanie 3 | Kotlin
 ✗ | **4.0** Lista kategorii na określone żądanie użytkownika  
 ✗ | **4.5** Lista produktów wg żądanej kategorii  
 ✗ | **5.0** Aplikacja obsługuje dodatkowo jedną z platform: Slack lub Messenger 
- 
