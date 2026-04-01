@@ -17,7 +17,7 @@ Aplikacja na frameworku Play | [Screen recording](https://github.com/KwintaJ/E-b
 ✓ | **5.0** Konfiguracja CORS dla dwóch hostów dla metod CRUD | [Commit](https://github.com/KwintaJ/E-biznes/commit/ac5d74abe6b928fbbe917de8ad4dd191180b0747)  
   
 ## Zadanie 3 | Kotlin  
-✗ | **3.0** Aplikacja kliencka w Kotlinie we frameworku Ktor, która pozwala na przesyłanie wiadomości na platformę Discord  
+✗ | **3.0** Aplikacja kliencka w Kotlinie we frameworku Ktor do przesyłania wiadomości na platformę Discord  
 ✗ | **3.5** Odbieranie wiadomości użytkowników z platformy Discord skierowane do bota  
 ✗ | **4.0** Lista kategorii na określone żądanie użytkownika  
 ✗ | **4.5** Lista produktów wg żądanej kategorii  
@@ -26,7 +26,7 @@ Aplikacja na frameworku Play | [Screen recording](https://github.com/KwintaJ/E-b
 ## Zadanie 4 | Go  
 Projekt w echo w Go, modele z gorm, baza w sqlite.  
 
-✗ | **3.0** Aplikację we frameworku echo w języku Go, + kontroler Produktów zgodny z CRUD  
+✗ | **3.0** Aplikację we frameworku echo w języku Go + kontroler Produktów zgodny z CRUD  
 ✗ | **3.5** Model Produktów wykorzystując gorm wykorzystany w kontrolerze (zamiast listy)  
 ✗ | **4.0** Model Koszyka oraz odpowiedni endpoint  
 ✗ | **4.5** Model kategorii i relacja między kategorią a produktem  
