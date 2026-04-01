@@ -19,7 +19,7 @@ Aplikacja na frameworku Play | [Screen recording](https://github.com/KwintaJ/E-b
 ## Zadanie 3 | Kotlin  
 Aplikacja we frameworku Ktor  
 
-✗ | **3.0** Aplikacja kliencka, która pozwala na przesyłanie wiadomości na platformę Discord  
+✓ | **3.0** Aplikacja kliencka, która pozwala na przesyłanie wiadomości na platformę Discord | [Commit](https://github.com/KwintaJ/E-biznes/commit/9260f70c68566caa7446f53423ad3758bfad1d92)  
 ✗ | **3.5** Odbieranie wiadomości użytkowników z platformy Discord skierowane do bota  
 ✗ | **4.0** Lista kategorii na określone żądanie użytkownika  
 ✗ | **4.5** Lista produktów wg żądanej kategorii  
