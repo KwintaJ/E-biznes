@@ -20,9 +20,9 @@ Aplikacja na frameworku Play | [Screen recording](https://github.com/KwintaJ/E-b
 Aplikacja we frameworku Ktor  
 
 ✓ | **3.0** Aplikacja kliencka, która pozwala na przesyłanie wiadomości na platformę Discord | [Commit](https://github.com/KwintaJ/E-biznes/commit/9260f70c68566caa7446f53423ad3758bfad1d92)  
-✗ | **3.5** Odbieranie wiadomości użytkowników z platformy Discord skierowane do bota  
-✗ | **4.0** Lista kategorii na określone żądanie użytkownika  
-✗ | **4.5** Lista produktów wg żądanej kategorii  
+✓ | **3.5** Odbieranie wiadomości użytkowników z platformy Discord skierowane do bota | [Commit](https://github.com/KwintaJ/E-biznes/commit/6ccb5afbc05ece81d42c04e1a6edaf59bdde72c8)  
+✓ | **4.0** Lista kategorii na określone żądanie użytkownika | [Commit](https://github.com/KwintaJ/E-biznes/commit/a4434af898aa1fe2b2186ae7902359a2ff4955b5)  
+✓ | **4.5** Lista produktów wg żądanej kategorii | [Commit](https://github.com/KwintaJ/E-biznes/commit/2bdbd6b00e26b12107065b3bb29afb719dde04c6)  
 ✗ | **5.0** Aplikacja obsługuje dodatkowo jedną z platform: Slack lub Messenger 
 
 ## Zadanie 4 | Go  
