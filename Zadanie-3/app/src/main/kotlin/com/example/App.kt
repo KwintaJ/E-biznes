@@ -7,6 +7,14 @@ import dev.kord.gateway.Intent
 import dev.kord.gateway.PrivilegedIntent
 import io.github.cdimascio.dotenv.dotenv
 
+class Category(val id: Int, val name: String)
+
+val categories = listOf(
+    Category(1, "Elektronika"),
+    Category(2, "Gry"),
+    Category(3, "Akcesoria")
+)
+
 suspend fun main() {
     val dotenv = dotenv { directory = ".." }
     val token = dotenv["DISCORD_TOKEN"]
@@ -20,8 +28,9 @@ suspend fun main() {
         val content = message.content.lowercase()
 
         when {
-            content == "!bot" -> {
-                message.channel.createMessage("Cześć!")
+            content.equals("!sklep") -> {
+                val response = categories.joinToString("\n") { "- ${it.name}" }
+                message.channel.createMessage("**Dostępne kategorie:**\n$response")
             }
         }
     }
