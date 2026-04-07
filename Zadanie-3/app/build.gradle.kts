@@ -21,6 +21,10 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
 
     implementation("io.github.cdimascio:dotenv-kotlin:6.4.1")
+
+    implementation("dev.kord:kord-core:0.13.1")
+    implementation("ch.qos.logback:logback-classic:1.4.14")
+    implementation("io.github.cdimascio:dotenv-kotlin:6.4.1")
 }
 
 application {
