@@ -87,7 +87,19 @@ fun main() {
             }
         }
 
-        // TODO
         // --- slack ---
+        launch(Dispatchers.IO) {
+            val config = com.slack.api.bolt.AppConfig.builder().singleTeamBotToken(slck_bot).build()
+            val slackApp = App(config)
+            
+            slackApp.event(com.slack.api.model.event.AppMentionEvent::class.java) { payload, ctx ->
+                val reply = getResponse(payload.event.text.replace("<@.*?>".toRegex(), ""))
+                if (reply.isNotEmpty()) ctx.say(reply)
+                ctx.ack()
+            }
+
+            val socketModeApp = SocketModeApp(slck_app, slackApp)
+            socketModeApp.start() 
+        }
     }
 }
