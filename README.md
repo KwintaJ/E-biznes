@@ -17,13 +17,13 @@ Aplikacja na frameworku Play | [Screen recording](https://github.com/KwintaJ/E-b
 ✓ | **5.0** Konfiguracja CORS dla dwóch hostów dla metod CRUD | [Commit](https://github.com/KwintaJ/E-biznes/commit/ac5d74abe6b928fbbe917de8ad4dd191180b0747)  
   
 ## Zadanie 3 | Kotlin  
-Aplikacja we frameworku Ktor  
+Aplikacja we frameworku Ktor | [Screen recording](https://github.com/KwintaJ/E-biznes/blob/main/Zadanie-3/Screen-recording.mov)  
 
 ✓ | **3.0** Aplikacja kliencka, która pozwala na przesyłanie wiadomości na platformę Discord | [Commit](https://github.com/KwintaJ/E-biznes/commit/9260f70c68566caa7446f53423ad3758bfad1d92)  
 ✓ | **3.5** Odbieranie wiadomości użytkowników z platformy Discord skierowane do bota | [Commit](https://github.com/KwintaJ/E-biznes/commit/6ccb5afbc05ece81d42c04e1a6edaf59bdde72c8)  
 ✓ | **4.0** Lista kategorii na określone żądanie użytkownika | [Commit](https://github.com/KwintaJ/E-biznes/commit/a4434af898aa1fe2b2186ae7902359a2ff4955b5)  
 ✓ | **4.5** Lista produktów wg żądanej kategorii | [Commit](https://github.com/KwintaJ/E-biznes/commit/2bdbd6b00e26b12107065b3bb29afb719dde04c6)  
-✗ | **5.0** Aplikacja obsługuje dodatkowo jedną z platform: Slack lub Messenger 
+✓ | **5.0** Aplikacja obsługuje dodatkowo platformę Slack | [Commit](https://github.com/KwintaJ/E-biznes/commit/42d7b8d6545829c775f33a9ae122490dee97b733)  
 
 ## Zadanie 4 | Go  
 Projekt w echo w Go, modele z gorm, baza w sqlite.  
@@ -33,3 +33,13 @@ Projekt w echo w Go, modele z gorm, baza w sqlite.
 ✗ | **4.0** Model Koszyka oraz odpowiedni endpoint  
 ✗ | **4.5** Model kategorii i relacja między kategorią a produktem  
 ✗ | **5.0** Zapytania pogrupowane w gorm’owe scope'y  
+
+## Zadanie 5 | Frontend
+
+Należy stworzyć aplikację kliencką wykorzystując bibliotekę React.js. W ramach projektu należy stworzyć trzy komponenty: Produkty, Koszyk oraz Płatności. Koszyk oraz Płatności powinny wysyłać do aplikacji serwerowej dane, a w Produktach powinniśmy pobierać dane o produktach z aplikacji serwerowej. Aplikacja serwera w jednym z trzech języków: Kotlin, Scala, Go. Dane pomiędzy wszystkimi komponentami powinny być przesyłane za pomocą React hooks.  
+
+✗ | **3.0** W ramach projektu należy stworzyć dwa komponenty: Produkty oraz Płatności; Płatności powinny wysyłać do aplikacji serwerowej dane, a w Produktach powinniśmy pobierać dane o produktach z aplikacji serwerowej  
+✗ | **3.5** Należy dodać Koszyk wraz z widokiem; należy wykorzystać routing  
+✗ | **4.0** Dane pomiędzy wszystkimi komponentami powinny być przesyłane za pomocą React hooks  
+✗ | **4.5** Należy dodać skrypt uruchamiający aplikację serwerową oraz kliencką na dockerze via docker-compose  
+✗ | **5.0** Należy wykorzystać axios’a oraz dodać nagłówki pod CORS  
