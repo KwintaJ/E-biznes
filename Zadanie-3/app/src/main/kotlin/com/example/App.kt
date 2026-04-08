@@ -6,7 +6,11 @@ import dev.kord.core.on
 import dev.kord.gateway.Intent
 import dev.kord.gateway.PrivilegedIntent
 import io.github.cdimascio.dotenv.dotenv
+import com.slack.api.bolt.App
+import com.slack.api.bolt.socket_mode.SocketModeApp
+import kotlinx.coroutines.*
 
+// --- baza danych jako listy ---
 class Category(val id: Int, val name: String)
 class Product(var name: String, var categoryId: Int, var price: Double)
 
@@ -24,52 +28,66 @@ val products = listOf(
     Product("Podkładka pod mysz", 3, 30.00)
 )
 
-suspend fun main() {
-    val dotenv = dotenv { directory = ".." }
-    val token = dotenv["DISCORD_TOKEN"]
-    val channel = dotenv["DISCORD_CHANNEL_ID"]       
-    
-    val kord = Kord(token)
+// --- logika odpowiedzi ---
+fun getResponse(query: String): String {
+    val q = query.lowercase().trim()
+    return when {
+        q.startsWith("!sklep") -> {
+            val req = q.removePrefix("!sklep").trim()
 
-    kord.on<MessageCreateEvent> {
-        if (message.author?.isBot == true) return@on
-
-        val content = message.content.lowercase().trim()
-
-        when {
-            content.equals("!sklep") -> {
-                val response = categories.joinToString("\n") { "- ${it.name}" }
-                message.channel.createMessage("**Dostępne kategorie:**\n$response")
-            }
-
-            content.startsWith("!produkty") -> {
-                val requestedCategoryName = content.removePrefix("!produkty").trim()
-
-                if (requestedCategoryName.isEmpty()) {
-                    message.channel.createMessage("Użycie: `!produkty [nazwa_kategorii]` (np. `!produkty Gry`)")
-                    return@on
+            when {
+                req.isEmpty() -> "Cześć! Tu sklep KwintaJ-KtorBot!\n\nDostępne komendy:\n- Lista kategorii:  `!sklep kategorie`\n- Produkty w kategorii: `!sklep [nazwa_kategorii]`"
+                
+                req.equals("kategorie") -> {
+                    val response = categories.joinToString("\n") { "- ${it.name}" }
+                    "**Dostępne kategorie:**\n$response"
                 }
 
-                val category = categories.find { it.name.equals(requestedCategoryName, ignoreCase = true) }
+                else -> {
+                    val category = categories.find { it.name.equals(req, ignoreCase = true) }
 
-                if (category == null) {
-                    message.channel.createMessage("Nie istnieje taka kategoria **${requestedCategoryName}**")
-                } else {
-                    val matchingProducts = products.filter { it.categoryId == category.id }
-
-                    if (matchingProducts.isEmpty()) {
-                        message.channel.createMessage("Brak produktów w kategorii **${category.name}**.")
-                    } else {
-                        val productList = matchingProducts.joinToString("\n") { "- **${it.name}**: ${it.price} zł" }
-                        message.channel.createMessage("Produkty w kategorii **${category.name}**:\n$productList")
+                    if (category == null) "Nie istnieje kategoria **${query.removePrefix("!sklep").trim()}**" 
+                    else {
+                        val matchingProducts = products.filter { it.categoryId == category.id }
+                        
+                        if (matchingProducts.isEmpty()) "Brak produktów w kategorii **${category.name}**."
+                        else {
+                            val productList = matchingProducts.joinToString("\n") { "- **${it.name}**: ${it.price} zł" }
+                            "Produkty w kategorii **${category.name}**:\n$productList"
+                        }
                     }
                 }
             }
         }
+        
+        else -> ""
     }
+}
 
-    kord.login {
-        @OptIn(PrivilegedIntent::class)
-        intents += Intent.MessageContent
+fun main() {
+    runBlocking {
+        // --- tokeny botow ---
+        val dotenv = dotenv { directory = ".." }
+        val dsc_token = dotenv["DISCORD_TOKEN"]
+        val channel = dotenv["DISCORD_CHANNEL_ID"]
+        val slck_app = dotenv["SLACK_APP_TOKEN"]
+        val slck_bot = dotenv["SLACK_BOT_TOKEN"]       
+        
+        // --- discord ---
+        launch {
+            val kord = Kord(dsc_token)
+            kord.on<MessageCreateEvent> {
+                if (message.author?.isBot == true) return@on
+                val reply = getResponse(message.content)
+                if (reply.isNotEmpty()) message.channel.createMessage(reply)
+            }
+            kord.login {
+                @OptIn(PrivilegedIntent::class)
+                intents += Intent.MessageContent
+            }
+        }
+
+        // TODO
+        // --- slack ---
     }
 }
