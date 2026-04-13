@@ -14,3 +14,7 @@ type CartItem struct {
     Product   Product `json:"product" gorm:"foreignKey:ProductID"`
     Quantity  int     `json:"quantity"`
 }
+
+func WithProducts(db *gorm.DB) *gorm.DB {
+    return db.Preload("Product.Category")
+}

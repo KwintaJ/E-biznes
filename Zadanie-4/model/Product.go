@@ -9,3 +9,7 @@ type Product struct {
     CategoryID uint     `json:"category_id"` 
     Category   Category `json:"category" gorm:"foreignKey:CategoryID"`
 }
+
+func WithCategory(db *gorm.DB) *gorm.DB {
+    return db.Preload("Category")
+}

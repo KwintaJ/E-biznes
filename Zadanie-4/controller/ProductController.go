@@ -9,7 +9,7 @@ import (
 
 func GetAllProducts(c echo.Context) error {
     var products []model.Product
-    database.DB.Preload("Category").Find(&products)
+    database.DB.Scopes(model.WithCategory).Find(&products)
     
     return c.JSON(http.StatusOK, products)
 }
@@ -18,7 +18,7 @@ func GetProduct(c echo.Context) error {
     id := c.Param("id")
     var product model.Product
 
-    if err := database.DB.Preload("Category").First(&product, id).Error; err != nil {
+    if err := database.DB.Scopes(model.WithCategory).First(&product, id).Error; err != nil {
         return c.JSON(http.StatusNotFound, map[string]string{"message": "Produkt nie znaleziony"})
     }
 
