@@ -1,8 +1,9 @@
 package model
 
-// mock model
+import "gorm.io/gorm"
+
 type Product struct {
-    ID    int
-    Name  string
-    Price float64
+    gorm.Model
+    Name  string  `json:"name"`
+    Price float64 `json:"price"`
 }
