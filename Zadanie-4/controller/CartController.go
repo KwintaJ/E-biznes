@@ -72,7 +72,7 @@ func GetCart(c echo.Context) error {
 
     var items []model.CartItem
 
-    if err := database.DB.Where("cart_id = ?", cartID).Find(&items).Error; err != nil {
+    if err := database.DB.Preload("Product").Where("cart_id = ?", cartID).Find(&items).Error; err != nil {
         return c.JSON(http.StatusNotFound, map[string]string{"message": "Błąd koszyka"})
     }
     
