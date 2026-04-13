@@ -27,5 +27,11 @@ func main() {
     c.PUT("/:id", controller.ChangeQuantity)
     c.DELETE("/:id", controller.DeleteFromCart)
 
+    // Categories routes
+    t := e.Group("/categories")
+    t.GET("", controller.GetCategories)
+    t.POST("", controller.CreateCategory)
+    t.GET("/:id/products", controller.GetCategoryProducts)
+
     e.Logger.Fatal(e.Start(":8080"))
 }
