@@ -28,9 +28,9 @@ Aplikacja we frameworku Ktor | [Screen recording](https://github.com/KwintaJ/E-b
 ## Zadanie 4 | Go  
 Projekt w echo w Go, modele z gorm, baza w sqlite.  
 
-✗ | **3.0** Aplikację we frameworku echo w języku Go + kontroler Produktów zgodny z CRUD  
-✗ | **3.5** Model Produktów wykorzystując gorm wykorzystany w kontrolerze (zamiast listy)  
-✗ | **4.0** Model Koszyka oraz odpowiedni endpoint  
+✓ | **3.0** Aplikację we frameworku echo w języku Go + kontroler Produktów zgodny z CRUD | [Commit](https://github.com/KwintaJ/E-biznes/commit/27b9e254cdd92c2595c73cc6e7227eca55032c77)  
+✓ | **3.5** Model Produktów wykorzystując gorm wykorzystany w kontrolerze (zamiast listy) | [Commit](https://github.com/KwintaJ/E-biznes/commit/84b5d9d5020d71c53c240153d9a1cafd716d81fe)  
+✓ | **4.0** Model Koszyka oraz odpowiedni endpoint | [Commit](https://github.com/KwintaJ/E-biznes/commit/cb93f11380272f4d79ec3ca486792121db1be12b)  
 ✗ | **4.5** Model kategorii i relacja między kategorią a produktem  
 ✗ | **5.0** Zapytania pogrupowane w gorm’owe scope'y  
 
