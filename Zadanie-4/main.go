@@ -8,15 +8,24 @@ import (
 
 func main() {
     database.InitDB()
-    e := echo.New()
-
-    g := e.Group("/products")
+    database.CartInit()
     
-    g.GET("", controller.GetAllProducts)
-    g.GET("/:id", controller.GetProduct)
-    g.POST("", controller.CreateProduct)
-    g.PUT("/:id", controller.UpdateProduct)
-    g.DELETE("/:id", controller.DeleteProduct)
+    e := echo.New()
+    
+    // Product routes
+    p := e.Group("/products")
+    p.GET("", controller.GetAllProducts)
+    p.GET("/:id", controller.GetProduct)
+    p.POST("", controller.CreateProduct)
+    p.PUT("/:id", controller.UpdateProduct)
+    p.DELETE("/:id", controller.DeleteProduct)
+
+    // Cart routes
+    c := e.Group("/cart")
+    c.GET("", controller.GetCart)
+    c.POST("", controller.AddToCart)
+    c.PUT("/:id", controller.ChangeQuantity)
+    c.DELETE("/:id", controller.DeleteFromCart)
 
     e.Logger.Fatal(e.Start(":8080"))
 }
