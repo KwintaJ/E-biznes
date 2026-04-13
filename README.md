@@ -34,12 +34,12 @@ Projekt w echo w Go, modele z gorm, baza w sqlite.
 ✓ | **4.5** Model kategorii i relacja między kategorią a produktem | [Commit](https://github.com/KwintaJ/E-biznes/commit/5d5db6fe4204bc4aaf08084ea1f6b2f36c135af3)  
 ✓ | **5.0** Zapytania pogrupowane w gorm’owe scope'y | [Commit](https://github.com/KwintaJ/E-biznes/commit/482d4cb9016065c16857c6937abecf7ec0661ac1)  
 
-## Zadanie 5 | Frontend
+## Zadanie 5 | React.js
 
-Należy stworzyć aplikację kliencką wykorzystując bibliotekę React.js. W ramach projektu należy stworzyć trzy komponenty: Produkty, Koszyk oraz Płatności. Koszyk oraz Płatności powinny wysyłać do aplikacji serwerowej dane, a w Produktach powinniśmy pobierać dane o produktach z aplikacji serwerowej. Aplikacja serwera w jednym z trzech języków: Kotlin, Scala, Go. Dane pomiędzy wszystkimi komponentami powinny być przesyłane za pomocą React hooks.  
+Aplikacja kliencka wykorzystująca bibliotekę React.js. Trzy komponenty: Produkty, Koszyk oraz Płatności. Koszyk oraz Płatności wysyłają do aplikacji serwerowej dane, a w Produktach dane o produktach są pobierane z aplikacji serwerowej. Aplikacja serwera w Go. Dane pomiędzy wszystkimi komponentami przesyłane za pomocą React hooks.  
 
-✗ | **3.0** W ramach projektu należy stworzyć dwa komponenty: Produkty oraz Płatności; Płatności powinny wysyłać do aplikacji serwerowej dane, a w Produktach powinniśmy pobierać dane o produktach z aplikacji serwerowej  
-✗ | **3.5** Należy dodać Koszyk wraz z widokiem; należy wykorzystać routing  
-✗ | **4.0** Dane pomiędzy wszystkimi komponentami powinny być przesyłane za pomocą React hooks  
-✗ | **4.5** Należy dodać skrypt uruchamiający aplikację serwerową oraz kliencką na dockerze via docker-compose  
-✗ | **5.0** Należy wykorzystać axios’a oraz dodać nagłówki pod CORS  
+✗ | **3.0** Produkty oraz Płatności; Płatności wysyłają dane, a Produkty pobierają dane
+✗ | **3.5** Koszyk wraz z widokiem 
+✗ | **4.0** Dane pomiędzy wszystkimi komponentami przesyłane za pomocą React hooks  
+✗ | **4.5** Skrypt uruchamiający aplikację serwerową oraz kliencką na dockerze via docker-compose  
+✗ | **5.0** Axios’a + nagłówki pod CORS  
