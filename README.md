@@ -31,8 +31,8 @@ Projekt w echo w Go, modele z gorm, baza w sqlite.
 ✓ | **3.0** Aplikację we frameworku echo w języku Go + kontroler Produktów zgodny z CRUD | [Commit](https://github.com/KwintaJ/E-biznes/commit/27b9e254cdd92c2595c73cc6e7227eca55032c77)  
 ✓ | **3.5** Model Produktów wykorzystując gorm wykorzystany w kontrolerze (zamiast listy) | [Commit](https://github.com/KwintaJ/E-biznes/commit/84b5d9d5020d71c53c240153d9a1cafd716d81fe)  
 ✓ | **4.0** Model Koszyka oraz odpowiedni endpoint | [Commit](https://github.com/KwintaJ/E-biznes/commit/cb93f11380272f4d79ec3ca486792121db1be12b)  
-✗ | **4.5** Model kategorii i relacja między kategorią a produktem  
-✗ | **5.0** Zapytania pogrupowane w gorm’owe scope'y  
+✓ | **4.5** Model kategorii i relacja między kategorią a produktem | [Commit](https://github.com/KwintaJ/E-biznes/commit/5d5db6fe4204bc4aaf08084ea1f6b2f36c135af3)  
+✓ | **5.0** Zapytania pogrupowane w gorm’owe scope'y | [Commit](https://github.com/KwintaJ/E-biznes/commit/482d4cb9016065c16857c6937abecf7ec0661ac1)  
 
 ## Zadanie 5 | Frontend
 
