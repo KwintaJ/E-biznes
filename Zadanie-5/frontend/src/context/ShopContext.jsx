@@ -17,7 +17,13 @@ export const ShopProvider = ({ children }) => {
       const res = await api.get(`/cart/${cid}`);
       setItems(res.data.items || []);
       setTotal(res.data.total || 0);
-    } catch (err) { console.error("Błąd pobierania koszyka", err); }
+    } catch (err) {
+      if (err.response && err.response.status === 404) {
+        newCart(); 
+      } else {
+        console.error("Błąd pobierania koszyka", err);
+      }
+    }
   };
 
   const fetchProducts = async () => {

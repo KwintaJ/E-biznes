@@ -8,9 +8,9 @@ function App() {
   return (
     <div className="App">
       <header style={{ padding: '20px', background: '#AAAAAA'}}>
-        <h1>Sklep</h1>
+        <h1>Sklep KompuPRO</h1>
       </header>
-      
+
       <ShopProvider>
         <Products />
         <Carts />
