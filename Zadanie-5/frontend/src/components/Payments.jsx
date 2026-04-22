@@ -4,17 +4,47 @@ const Payments = () => {
   const [status, setStatus] = useState('idle');
 
   const total = 100;
+  const cartID = 1;
 
   const handlePay = async (method) => {
     setStatus('processing');
     try {
-      const payment = await processPayment(total, method);
-      console.log("Płatność utworzona:", payment);
+      const paymentDetails = {
+        amount: total,
+        method: method,
+        status: "",
+        cart_id: cartID
+      };
+
+      const response = await fetch(`http://localhost:8080/payments`, { 
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(paymentDetails)
+      });
+
+      if(!response.ok){
+        throw new Error('Błąd sieciowy - serwer nie odpowiada');
+      }
+
+      const payment = await response.json();
       
       setTimeout(async () => {
-        await fetch(`http://localhost:8080/payments/${payment.ID}/completed`, { method: 'PUT' });
-        setStatus('success');
-      }, 2000);
+      try {
+        const finalizeRes = await fetch(`http://localhost:8080/payments/${payment.ID}/completed`, { 
+          method: 'PUT' 
+        });
+
+        if (finalizeRes.ok) {
+          setStatus('success');
+        } else {
+          setStatus('error');
+        }
+      } catch (e) {
+        setStatus('error');
+      }
+    }, 2000);
       
     } catch (err) {
       setStatus('error');
@@ -22,6 +52,7 @@ const Payments = () => {
   };
 
   if (status === 'success') return <h3>Płatność zakończona sukcesem!</h3>;
+  if (status === 'error') return <h3>Płatność zakończona niepowodzeniem</h3>;
 
   return (
     <div style={{ padding: '20px', border: '2px solid gold' }}>
@@ -32,8 +63,8 @@ const Payments = () => {
         <p>Przetwarzanie płatności...</p>
       ) : (
         <div>
-          <button onClick={() => handlePay('BLIK')}>Płacę BLIKiem</button>
-          <button onClick={() => handlePay('KARTA')}>Płacę Kartą</button>
+          <button onClick={() => handlePay('blik')}>Płacę BLIKiem</button>
+          <button onClick={() => handlePay('card')}>Płacę Kartą</button>
         </div>
       )}
     </div>

@@ -48,19 +48,6 @@ const Products = () => {
           >
             <h3>{product.name}</h3>
             <p>Cena: <strong>{product.price} zł</strong></p>
-              <button 
-                              onClick={() => handleAddToCart(product.ID)}
-                              style={{ 
-                                  backgroundColor: '#AAAAA', 
-                                  color: 'white', 
-                                  border: 'none', 
-                                  padding: '10px', 
-                                  borderRadius: '5px',
-                                  cursor: 'pointer' 
-                              }}
-                          >
-                              Dodaj do koszyka
-              </button>
           </div>
         ))}
       </div>
