@@ -36,10 +36,10 @@ Projekt w echo w Go, modele z gorm, baza w sqlite.
 
 ## Zadanie 5 | React.js
 
-Aplikacja kliencka wykorzystująca bibliotekę React.js. Trzy komponenty: Produkty, Koszyk oraz Płatności. Koszyk oraz Płatności wysyłają do aplikacji serwerowej dane, a w Produktach dane o produktach są pobierane z aplikacji serwerowej. Aplikacja serwera w Go. Dane pomiędzy wszystkimi komponentami przesyłane za pomocą React hooks.  
+Aplikacja kliencka wykorzystująca bibliotekę React.js. Trzy komponenty: Produkty, Koszyk oraz Płatności. Koszyk oraz Płatności wysyłają do aplikacji serwerowej dane, a w Produktach dane o produktach są pobierane z aplikacji serwerowej. Aplikacja serwera w Go. Dane pomiędzy wszystkimi komponentami przesyłane za pomocą React hooks. | [Screen recording](https://github.com/KwintaJ/E-biznes/blob/main/Zadanie-5/Screen%20Recording%202026-04-22%20at%2022.44.59.mov)  
 
 ✓ | **3.0** Produkty oraz Płatności; Płatności wysyłają dane, a Produkty pobierają dane | [Commit](https://github.com/KwintaJ/E-biznes/tree/73ce8418251b372491e6420298542fa8c1474cc0/Zadanie-5/frontend/src/components)  
 ✓ | **3.5** Koszyk wraz z widokiem | [Commit](https://github.com/KwintaJ/E-biznes/commit/fa4caa279597b72ec66e50a2f022000910ef8714)  
 ✓ | **4.0** Dane pomiędzy wszystkimi komponentami przesyłane za pomocą React hooks | [Commit](https://github.com/KwintaJ/E-biznes/commit/9ebb262d09e03863bf3097d16ec5a3a5d4909227)  
 ✓ | **4.5** Skrypt uruchamiający aplikację serwerową oraz kliencką na dockerze via docker-compose | [Commit](https://github.com/KwintaJ/E-biznes/commit/b7c64941777473de77b12e0a249aa06a24dd7e28)  
-✗ | **5.0** Axios + nagłówki pod CORS  
+✓ | **5.0** Axios + nagłówki pod CORS | [Commit](https://github.com/KwintaJ/E-biznes/commit/3d8ad1fa3e8ce35f00e5421b75e0e7fffae600be)  
