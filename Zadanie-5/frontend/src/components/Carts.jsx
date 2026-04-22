@@ -64,7 +64,7 @@ const Carts = () => {
             if (res.ok) {
                 setItems(items.filter(item => item.ID !== itemID));
             }
-            window.reload();
+            window.location.reload();
         } catch (err) {
             console.error("Błąd ", err);
         }

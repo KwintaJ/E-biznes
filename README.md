@@ -39,7 +39,7 @@ Projekt w echo w Go, modele z gorm, baza w sqlite.
 Aplikacja kliencka wykorzystująca bibliotekę React.js. Trzy komponenty: Produkty, Koszyk oraz Płatności. Koszyk oraz Płatności wysyłają do aplikacji serwerowej dane, a w Produktach dane o produktach są pobierane z aplikacji serwerowej. Aplikacja serwera w Go. Dane pomiędzy wszystkimi komponentami przesyłane za pomocą React hooks.  
 
 ✓ | **3.0** Produkty oraz Płatności; Płatności wysyłają dane, a Produkty pobierają dane | [Commit](https://github.com/KwintaJ/E-biznes/tree/73ce8418251b372491e6420298542fa8c1474cc0/Zadanie-5/frontend/src/components)  
-✗ | **3.5** Koszyk wraz z widokiem  
+✗ | **3.5** Koszyk wraz z widokiem | [Commit](https://github.com/KwintaJ/E-biznes/commit/fa4caa279597b72ec66e50a2f022000910ef8714)  
 ✗ | **4.0** Dane pomiędzy wszystkimi komponentami przesyłane za pomocą React hooks  
 ✗ | **4.5** Skrypt uruchamiający aplikację serwerową oraz kliencką na dockerze via docker-compose  
 ✗ | **5.0** Axios’a + nagłówki pod CORS  
