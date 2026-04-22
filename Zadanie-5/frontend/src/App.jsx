@@ -1,4 +1,5 @@
 import React from 'react'
+import { ShopProvider } from './context/ShopContext';
 import Products from './components/Products'
 import Payments from './components/Payments'
 import Carts from './components/Carts'
@@ -10,13 +11,13 @@ function App() {
         <h1>Sklep</h1>
       </header>
       
-      <main>
+      <ShopProvider>
         <Products />
         <Carts />
         <Payments />
-      </main>
+      </ShopProvider>
     </div>
-  )
+  );
 }
 
 export default App;
