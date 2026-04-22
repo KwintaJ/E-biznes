@@ -1,0 +1,20 @@
+services:
+  backend:
+    build: 
+      context: ./backend
+    container_name: shop-backend
+    environment:
+      - DB_NAME=app.db
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backend/app.db:/app/app.db
+
+  frontend:
+    build: 
+      context: ./frontend
+    container_name: shop-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
