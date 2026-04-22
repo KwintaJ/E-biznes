@@ -41,5 +41,5 @@ Aplikacja kliencka wykorzystująca bibliotekę React.js. Trzy komponenty: Produk
 ✓ | **3.0** Produkty oraz Płatności; Płatności wysyłają dane, a Produkty pobierają dane | [Commit](https://github.com/KwintaJ/E-biznes/tree/73ce8418251b372491e6420298542fa8c1474cc0/Zadanie-5/frontend/src/components)  
 ✓ | **3.5** Koszyk wraz z widokiem | [Commit](https://github.com/KwintaJ/E-biznes/commit/fa4caa279597b72ec66e50a2f022000910ef8714)  
 ✓ | **4.0** Dane pomiędzy wszystkimi komponentami przesyłane za pomocą React hooks | [Commit](https://github.com/KwintaJ/E-biznes/commit/9ebb262d09e03863bf3097d16ec5a3a5d4909227)  
-✗ | **4.5** Skrypt uruchamiający aplikację serwerową oraz kliencką na dockerze via docker-compose  
-✗ | **5.0** Axios’a + nagłówki pod CORS  
+✓ | **4.5** Skrypt uruchamiający aplikację serwerową oraz kliencką na dockerze via docker-compose | [Commit](https://github.com/KwintaJ/E-biznes/commit/b7c64941777473de77b12e0a249aa06a24dd7e28)  
+✗ | **5.0** Axios + nagłówki pod CORS  
