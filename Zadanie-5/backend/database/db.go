@@ -14,7 +14,7 @@ func InitDB() {
         panic("Nie udało się połączyć z bazą danych!")
     }
 
-    database.AutoMigrate(&model.Product{}, &model.Payment{})
+    database.AutoMigrate(&model.Product{}, &model.Payment{}, &model.Cart{}, &model.CartItem{})
 
     DB = database
 }

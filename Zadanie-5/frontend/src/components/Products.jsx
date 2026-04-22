@@ -19,23 +19,43 @@ const Products = () => {
       });
   }, []);
 
-  const handleAddToCart = async (productID) => {
+  const handleAddToCart = async (product) => {
     const cartID = localStorage.getItem('activeCartID');
+
+    if (!cartID) {
+      alert("Błąd koszyka");
+      return;
+    }
+
     try {
-      const response = await fetch(`http://localhost:8080/cart/${cartID}`, {
+      const itemDetails = {
+        product_id: product.ID,
+        name:       product.name,
+        price:      product.price,
+        quantity:   1
+      };
+
+      console.log(cartID);
+      const response = await fetch(`http://localhost:8080/cart/${cartID}`, { 
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-          product_id: productID,
-          quantity: 1
-        })
+        body: JSON.stringify(itemDetails)
       });
+
+      if (!response.ok) {
+        throw new Error('Błąd sieciowy - serwer nie odpowiada');
+      }
+
+      const result = await response.json();
+      window.location.reload();
+      
     } catch (err) {
-      setStatus('error');
+      console.error(err);
+      alert("Błąd");
     }
-  }
+};
 
   return (
     <div style={{ padding: '20px' }}>
@@ -48,6 +68,9 @@ const Products = () => {
           >
             <h3>{product.name}</h3>
             <p>Cena: <strong>{product.price} zł</strong></p>
+              <button onClick={() => handleAddToCart(product)}>
+                Dodaj do koszyka
+              </button>
           </div>
         ))}
       </div>

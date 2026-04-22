@@ -3,8 +3,8 @@ import React, { useContext, useState } from 'react';
 const Payments = () => {
   const [status, setStatus] = useState('idle');
 
-  const total = 100;
-  const cartID = 1;
+  const total = localStorage.getItem('cartTotal');
+  const cartID = localStorage.getItem('activeCartID');;
 
   const handlePay = async (method) => {
     setStatus('processing');
@@ -29,6 +29,7 @@ const Payments = () => {
       }
 
       const payment = await response.json();
+      console.log(payment);
       
       setTimeout(async () => {
       try {
@@ -55,9 +56,9 @@ const Payments = () => {
   if (status === 'error') return <h3>Płatność zakończona niepowodzeniem</h3>;
 
   return (
-    <div style={{ padding: '20px', border: '2px solid gold' }}>
+    <div style={{ padding: '20px', border: '2px solid gold', margin: '5px' }}>
       <h2>Płatność</h2>
-      <p>Do zapłaty: <strong>{total.toFixed(2)} PLN</strong></p>
+      <p>Do zapłaty: <strong>{total} PLN</strong></p>
       
       {status === 'processing' ? (
         <p>Przetwarzanie płatności...</p>

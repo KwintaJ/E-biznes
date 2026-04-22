@@ -12,6 +12,7 @@ function App() {
       
       <main>
         <Products />
+        <Carts />
         <Payments />
       </main>
     </div>

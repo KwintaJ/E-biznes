@@ -38,5 +38,13 @@ func main() {
     n.POST("", controller.CreatePayment)
     n.PUT("/:id/:status", controller.FinalizePayment)
 
+    // Cart routes
+    c := e.Group("/cart")
+    c.GET("/:cartid", controller.GetCart)
+    c.POST("", controller.NewCart)
+    c.POST("/:cartid", controller.AddToCart)
+    c.PUT("/:cartid/:id", controller.ChangeQuantity)
+    c.DELETE("/:cartid/:id", controller.DeleteFromCart)
+
     e.Logger.Fatal(e.Start(":8080"))
 }
