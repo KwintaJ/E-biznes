@@ -54,7 +54,7 @@ func AddToCart(c echo.Context) error {
         
         database.DB.Model(&cart).Association("Items").Append(&newItem)
     }
-
+    database.DB.Save(&cart)
     database.DB.Preload("Items").First(&cart, cartID)
 
     return c.JSON(http.StatusOK, cart)

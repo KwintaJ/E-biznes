@@ -1,7 +1,6 @@
 package main
 
 import (
-    "net/http"
     "app/controller"
     "app/database"
     "github.com/labstack/echo/v4"
@@ -13,15 +12,11 @@ func main() {
 
     e := echo.New()
 
+    // Konfiguracja CORS
     e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
         AllowOrigins: []string{"http://localhost:5173"},
-        
-        AllowMethods: []string{
-            http.MethodGet, 
-            http.MethodPost, 
-            http.MethodPut, 
-            http.MethodDelete, 
-        },
+        AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept, echo.HeaderAuthorization},
+        AllowMethods: []string{echo.GET, echo.POST, echo.PUT, echo.DELETE},
     }))
     
     // Product routes
