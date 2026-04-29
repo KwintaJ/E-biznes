@@ -43,3 +43,13 @@ Aplikacja kliencka wykorzystująca bibliotekę React.js. Trzy komponenty: Produk
 ✓ | **4.0** Dane pomiędzy wszystkimi komponentami przesyłane za pomocą React hooks | [Commit](https://github.com/KwintaJ/E-biznes/commit/9ebb262d09e03863bf3097d16ec5a3a5d4909227)  
 ✓ | **4.5** Skrypt uruchamiający aplikację serwerową oraz kliencką na dockerze via docker-compose | [Commit](https://github.com/KwintaJ/E-biznes/commit/b7c64941777473de77b12e0a249aa06a24dd7e28)  
 ✓ | **5.0** Axios + nagłówki pod CORS | [Commit](https://github.com/KwintaJ/E-biznes/commit/3d8ad1fa3e8ce35f00e5421b75e0e7fffae600be)  
+
+## Zadanie 6 | Testy
+
+20 przypadków testowych w Selenium (Python) do aplikacji webowych, zawierających 50 asercji. Możliwe uruchamianie na platformie Browserstack.  
+
+✗ | **3.0** 20 przypadków testowych w Selenium  
+✗ | **3.5** Minimum 50 asercji  
+✗ | **4.0** Działa z wybranym wcześniejszym projektem z tego repozytorium  
+✗ | **4.5** Testy API, pokryte wszystkie endpointy (minimum jeden scenariusz negatywny per endpoint)  
+✗ | **5.0** Uruchamianie testów funkcjonalych na Browserstacku  
