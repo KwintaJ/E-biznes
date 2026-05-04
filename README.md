@@ -46,10 +46,10 @@ Aplikacja kliencka wykorzystująca bibliotekę React.js. Trzy komponenty: Produk
 
 ## Zadanie 6 | Testy
 
-20 przypadków testowych w Selenium (Python) do aplikacji webowych, zawierających 50 asercji. Możliwe uruchamianie na platformie Browserstack.  
+Ponad 20 przypadków testowych w Selenium (Python) do aplikacji webowych, zawierających 50 asercji. Możliwe uruchamianie na platformie Browserstack.  
 
-✗ | **3.0** 20 przypadków testowych w Selenium  
-✗ | **3.5** Minimum 50 asercji  
-✗ | **4.0** Działa z wybranym wcześniejszym projektem z tego repozytorium  
-✗ | **4.5** Testy API, pokryte wszystkie endpointy (minimum jeden scenariusz negatywny per endpoint)  
+✓ | **3.0** 20+ przypadków testowych w Selenium  
+✓ | **3.5** 50+ asercji  
+✓ | **4.0** Działa z wybranym wcześniejszym projektem z tego repozytorium  
+✓ | **4.5** Testy API, pokryte wszystkie endpointy (minimum jeden scenariusz negatywny per endpoint)  
 ✗ | **5.0** Uruchamianie testów funkcjonalych na Browserstacku  

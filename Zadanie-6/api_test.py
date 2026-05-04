@@ -29,8 +29,13 @@ def test_get_all_products():
     
     # assert
     assert response.status_code == 200
-    assert isinstance(response.json(), list)
-    assert len(response.json()) > 2
+    data = response.json()
+    assert isinstance(data, list)
+    assert len(data) > 2
+    first_product = data[0]
+    assert "name" in first_product
+    assert "price" in first_product
+    assert isinstance(first_product["price"], (int, float))
 
 # test 2.2
 def test_get_a_product():
@@ -99,6 +104,8 @@ def test_delete_product():
     assert delete_response.status_code in [200, 204]
     get_response = requests.get(f"{BASE_URL}/products/{product_id}")
     assert get_response.status_code == 404
+    all_products = requests.get(f"{BASE_URL}/products").json()
+    assert not any(p["ID"] == product_id for p in all_products)
 
 # test 2.6
 def test_create_cart(cart_1):
@@ -172,6 +179,11 @@ def test_change_quantity_negative(cart_1):
     
     # assert
     assert response.status_code == 403
+
+    check_cart = requests.get(f"{BASE_URL}/cart/{cart_1}").json()
+    for item in check_cart["items"]:
+        if item["ID"] == cart_item_record_id:
+            assert item["quantity"] >= 0
 
 # test 2.11
 def test_delete_from_cart(cart_2):

@@ -33,6 +33,7 @@ def test_add_to_cart(driver):
     quantity_window = wait.until(EC.presence_of_element_located((By.XPATH, xpath_quantity_window)))
     actual_quantity = quantity_window.get_attribute("value")
     assert actual_quantity == "1"
+    assert quantity_window.is_displayed()
 
 # test 1.2
 def test_multiple_add_to_cart(driver):
@@ -86,7 +87,6 @@ def test_change_quantity_text_input(driver):
     quantity_window.send_keys("0")
     time.sleep(0.2)
 
-
     # assert
     actual_quantity = quantity_window.get_attribute("value")
     assert actual_quantity == "10"
@@ -130,6 +130,7 @@ def test_prevent_negative_quantity_text_input(driver):
     # negative assertion
     actual_quantity = quantity_window.get_attribute("value")
     assert actual_quantity != "-1"
+    assert int(actual_quantity) >= 0
 
 # test 1.5
 def test_change_quantity_arrows(driver):
@@ -188,7 +189,7 @@ def test_prevent_negative_quantity_arrows(driver):
 
     # assert
     actual_quantity = quantity_window.get_attribute("value")
-    assert actual_quantity >= "0"
+    assert int(actual_quantity) >= 0
 
 # test 1.7
 def test_remove_from_cart(driver):
@@ -210,6 +211,9 @@ def test_remove_from_cart(driver):
     # assert
     empty_cart_message = wait.until(EC.presence_of_element_located((By.XPATH, "//*[contains(text(), 'Twój koszyk jest pusty.')]")))
     assert empty_cart_message.is_displayed()
+
+    items_count = len(driver.find_elements(By.XPATH, "//button[text()='Usuń']"))
+    assert items_count == 0
 
 # test 1.8
 def test_total_price_calculation(driver):
