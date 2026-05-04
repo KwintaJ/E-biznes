@@ -3,3 +3,7 @@
 .bash_history
 .env*
 *.db
+
+venv
+__pycache__
+.pytest_cache
