@@ -5,6 +5,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support import expected_conditions as EC
 
 @pytest.fixture
@@ -12,21 +13,24 @@ def driver():
     bstack_user = os.getenv("BROWSERSTACK_USERNAME")
     bstack_key = os.getenv("BROWSERSTACK_ACCESS_KEY")
     
-    desired_cap = {
-        'browser': 'Chrome',
-        'browser_version': 'latest',
-        'os': 'Windows',
-        'os_version': '10',
-        'name': 'BStack Test - Selenium',
-        'build': 'build-1'
-    }
-
-    # URL do serwera BrowserStack
-    hub_url = f"https://{bstack_user}:{bstack_key}@hub-cloud.browserstack.com/wd/hub"
+    options = Options()
     
+    bstack_options = {
+        "os": "Windows",
+        "osVersion": "10",
+        "browserVersion": "latest",
+        "sessionName": "BStack Test - Selenium",
+        "buildName": "build-1",
+        "local": "true"
+    }
+    
+    options.set_capability('bstack:options', bstack_options)
+
+    hub_url = f"https://{bstack_user}:{bstack_key}@hub-cloud.browserstack.com/wd/hub"
+
     driver = webdriver.Remote(
         command_executor=hub_url,
-        desired_capabilities=desired_cap
+        options=options
     )
     
     yield driver
