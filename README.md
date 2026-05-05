@@ -52,4 +52,4 @@ Ponad 20 przypadków testowych w Selenium (Python) do aplikacji webowych, zawier
 ✓ | **3.5** 50+ asercji | [Commit](https://github.com/KwintaJ/E-biznes/commit/de128c539a9a42e954a167735e066d6d3eb92150)  
 ✓ | **4.0** Działa z wybranym wcześniejszym projektem z tego repozytorium | [Screen recording](https://github.com/KwintaJ/E-biznes/blob/main/Zadanie-6/Screen-recording-1.mov)  
 ✓ | **4.5** Testy API, pokryte wszystkie endpointy (minimum jeden scenariusz negatywny per endpoint) | [Commit](https://github.com/KwintaJ/E-biznes/commit/1b02b3b25e740e61bc179356285e3fadfd484613)  
-✗ | **5.0** Uruchamianie testów funkcjonalych na Browserstacku  
+✓ | **5.0** Uruchamianie testów funkcjonalych na Browserstacku | [Github Actions](https://github.com/KwintaJ/E-biznes/blob/5aa4175440fcde01b9af7608711db36fbf357e16/.github/workflows/main.yml) | [Workflow run](https://github.com/KwintaJ/E-biznes/actions/runs/25381430627/job/74430516521)  
