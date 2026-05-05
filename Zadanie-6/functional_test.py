@@ -21,7 +21,8 @@ def driver():
         "browserVersion": "latest",
         "sessionName": "BStack Test - Selenium",
         "buildName": "build-1",
-        "local": "true"
+        "local": "true",
+        "localIdentifier": "zadanie-6"
     }
     
     options.set_capability('bstack:options', bstack_options)
