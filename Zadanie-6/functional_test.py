@@ -40,7 +40,7 @@ def driver():
 # test 1.1
 def test_add_to_cart(driver):
     # arrange
-    url = "http://localhost:5173"
+    url = "http://bs-local.com:5173"
     wait = WebDriverWait(driver, 10)
     driver.get(url)
 
@@ -59,7 +59,7 @@ def test_add_to_cart(driver):
 # test 1.2
 def test_multiple_add_to_cart(driver):
     # arrange
-    url = "http://localhost:5173"
+    url = "http://bs-local.com:5173"
     wait = WebDriverWait(driver, 10)
     driver.get(url)
 
@@ -88,7 +88,7 @@ def test_multiple_add_to_cart(driver):
 # test 1.3
 def test_change_quantity_text_input(driver):
     # arrange
-    url = "http://localhost:5173"
+    url = "http://bs-local.com:5173"
     wait = WebDriverWait(driver, 10)
     driver.get(url)
     
@@ -130,7 +130,7 @@ def test_change_quantity_text_input(driver):
 # test 1.4
 def test_prevent_negative_quantity_text_input(driver):
     # arrange
-    url = "http://localhost:5173"
+    url = "http://bs-local.com:5173"
     wait = WebDriverWait(driver, 10)
     driver.get(url)
     
@@ -156,7 +156,7 @@ def test_prevent_negative_quantity_text_input(driver):
 # test 1.5
 def test_change_quantity_arrows(driver):
     # arrange
-    url = "http://localhost:5173"
+    url = "http://bs-local.com:5173"
     wait = WebDriverWait(driver, 10)
     driver.get(url)
     
@@ -186,7 +186,7 @@ def test_change_quantity_arrows(driver):
 # test 1.6
 def test_prevent_negative_quantity_arrows(driver):
     # arrange
-    url = "http://localhost:5173"
+    url = "http://bs-local.com:5173"
     wait = WebDriverWait(driver, 10)
     driver.get(url)
     
@@ -215,7 +215,7 @@ def test_prevent_negative_quantity_arrows(driver):
 # test 1.7
 def test_remove_from_cart(driver):
     # arrange
-    url = "http://localhost:5173"
+    url = "http://bs-local.com:5173"
     wait = WebDriverWait(driver, 10)
     driver.get(url)
     
@@ -239,7 +239,7 @@ def test_remove_from_cart(driver):
 # test 1.8
 def test_total_price_calculation(driver):
     # arrange
-    url = "http://localhost:5173"
+    url = "http://bs-local.com:5173"
     wait = WebDriverWait(driver, 10)
     driver.get(url)
     
@@ -274,7 +274,7 @@ def test_total_price_calculation(driver):
 # test 1.9
 def test_payment_price_calculation(driver):
     # arrange
-    url = "http://localhost:5173"
+    url = "http://bs-local.com:5173"
     wait = WebDriverWait(driver, 10)
     driver.get(url)
     
@@ -309,7 +309,7 @@ def test_payment_price_calculation(driver):
 # test 1.10
 def test_cart_contents_after_refresh(driver):
     # arrange
-    url = "http://localhost:5173"
+    url = "http://bs-local.com:5173"
     wait = WebDriverWait(driver, 10)
     driver.get(url)
 
