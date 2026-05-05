@@ -19,7 +19,7 @@ jobs:
           cd ./Zadanie-5/backend
           go mod download
           go mod tidy
-          go run main.go          
+          go run main.go &
           sleep 15
 
       - name: Set up Node.js
