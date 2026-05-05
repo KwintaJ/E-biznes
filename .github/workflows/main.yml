@@ -24,15 +24,19 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: Install dependencies
-        run: |
-          pip install pytest selenium requests
-          npm install
+      - name: Install Python dependencies
+        run: pip install pytest selenium requests
+
+      - name: Install Frontend dependencies
+        working-directory: ./Zadanie-5/frontend
+        run: npm install
 
       - name: Start Backend (Go)
+        working-directory: ./Zadanie-5/backend
         run: go run main.go &
 
       - name: Start Frontend (React)
+        working-directory: ./Zadanie-5/frontend
         run: npm run dev -- --host 0.0.0.0 &
 
       - name: Set up BrowserStack Env
