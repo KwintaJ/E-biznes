@@ -31,6 +31,10 @@ jobs:
         run: |
           curl -I http://localhost:8080/products
 
+      - name: Verify Data
+        run: |
+          curl -s http://localhost:8080/products
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
