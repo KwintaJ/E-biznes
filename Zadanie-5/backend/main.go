@@ -14,7 +14,7 @@ func main() {
 
     // Konfiguracja CORS
     e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
-        AllowOrigins: []string{"*"},
+        AllowOrigins: []string{"http://localhost:5173"},
         AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept, echo.HeaderAuthorization},
         AllowMethods: []string{echo.GET, echo.POST, echo.PUT, echo.DELETE},
     }))
