@@ -10,9 +10,17 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Go
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v4
         with:
           go-version: '1.26'
+
+      - name: Prepare and Start Go Backend
+        run: |
+          cd ./Zadanie-5/backend
+          go mod download
+          go mod tidy
+          go run main.go          
+          sleep 15
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -30,11 +38,6 @@ jobs:
       - name: Install Frontend dependencies
         working-directory: ./Zadanie-5/frontend
         run: npm install
-
-      - name: Start Go Backend
-        run: |
-          (cd ./Zadanie-5/backend && go run main.go &)
-          sleep 5
 
       - name: Start Frontend (React)
         working-directory: ./Zadanie-5/frontend
