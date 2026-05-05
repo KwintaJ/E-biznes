@@ -1,6 +1,6 @@
 module app
 
-go 1.26.2
+go 1.21
 
 require (
 	github.com/jinzhu/inflection v1.0.0 // indirect

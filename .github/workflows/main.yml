@@ -31,9 +31,10 @@ jobs:
         working-directory: ./Zadanie-5/frontend
         run: npm install
 
-      - name: Start Backend (Go)
-        working-directory: ./Zadanie-5/backend
-        run: go run main.go &
+      - name: Start Go Backend
+        run: |
+          (cd ./Zadanie-5/backend && go run main.go &)
+          sleep 5
 
       - name: Start Frontend (React)
         working-directory: ./Zadanie-5/frontend
