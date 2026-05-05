@@ -19,7 +19,8 @@ def driver():
         "os": "Windows",
         "osVersion": "10",
         "browserVersion": "latest",
-        "sessionName": "BStack Test - Selenium",
+        "sessionName": "Functional tests",
+        "projectName": "E-biznes",
         "buildName": "build-1",
         "local": "true",
         "localIdentifier": "zadanie-6"
