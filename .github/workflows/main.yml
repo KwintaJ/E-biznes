@@ -14,13 +14,16 @@ jobs:
         with:
           go-version: '1.26'
 
-      - name: Prepare and Start Go Backend
+      - name: Build and Start Go Backend
         run: |
           cd ./Zadanie-5/backend
           go mod download
-          go mod tidy
-          go run main.go > backend.log 2>&1 &
-          sleep 15
+          go build -o server main.go
+          
+          ./server > backend.log 2>&1 &
+          
+          sleep 20
+          
           echo "--- LOGI BACKENDU ---"
           cat backend.log
 
