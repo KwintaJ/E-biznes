@@ -19,8 +19,14 @@ jobs:
           cd ./Zadanie-5/backend
           go mod download
           go mod tidy
-          go run main.go &
+          go run main.go > backend.log 2>&1 &
           sleep 15
+          echo "--- LOGI BACKENDU ---"
+          cat backend.log
+
+      - name: Verify Backend Port
+        run: |
+          curl -I http://localhost:8080/products
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
