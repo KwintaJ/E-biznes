@@ -8,12 +8,27 @@ from selenium.webdriver.support import expected_conditions as EC
 
 @pytest.fixture
 def driver():
-    options = webdriver.ChromeOptions()
-    driver = webdriver.Chrome(options=options)
-    driver.maximize_window()
+    bstack_user = os.getenv("BROWSERSTACK_USERNAME")
+    bstack_key = os.getenv("BROWSERSTACK_ACCESS_KEY")
+    
+    desired_cap = {
+        'browser': 'Chrome',
+        'browser_version': 'latest',
+        'os': 'Windows',
+        'os_version': '10',
+        'name': 'BStack Test - Selenium',
+        'build': 'build-1'
+    }
+
+    # URL do serwera BrowserStack
+    hub_url = f"https://{bstack_user}:{bstack_key}@hub-cloud.browserstack.com/wd/hub"
+    
+    driver = webdriver.Remote(
+        command_executor=hub_url,
+        desired_capabilities=desired_cap
+    )
     
     yield driver
-    
     driver.quit()
 
 # test 1.1

@@ -1,0 +1,37 @@
+name: Selenium Tests on BrowserStack
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Start Backend (Go)
+        run: go run main.go &
+        
+      - name: Start Frontend (React)
+        run: npm install && npm run dev &
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install pytest selenium requests
+
+      - name: BrowserStack Local
+        uses: browserstack/github-actions/setup-local@master
+        with:
+          local-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+
+      - name: Run Tests
+        env:
+          BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
+          BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+        run: |
+          pytest test_selenium.py
