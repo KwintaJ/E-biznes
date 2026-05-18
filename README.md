@@ -53,3 +53,13 @@ Ponad 20 przypadków testowych w Selenium (Python) do aplikacji webowych, zawier
 ✓ | **4.0** Działa z wybranym wcześniejszym projektem z tego repozytorium | [Screen recording](https://github.com/KwintaJ/E-biznes/blob/main/Zadanie-6/Screen-recording-1.mov)  
 ✓ | **4.5** Testy API, pokryte wszystkie endpointy (minimum jeden scenariusz negatywny per endpoint) | [Commit](https://github.com/KwintaJ/E-biznes/commit/1b02b3b25e740e61bc179356285e3fadfd484613)  
 ✓ | **5.0** Uruchamianie testów funkcjonalych na Browserstacku | [Github Actions](https://github.com/KwintaJ/E-biznes/blob/5aa4175440fcde01b9af7608711db36fbf357e16/.github/workflows/main.yml) | [Workflow run](https://github.com/KwintaJ/E-biznes/actions/runs/25381430627/job/74430516521)  
+
+## Zadanie 7 | Sonar
+
+Testowanie aplikacji klient-serwer na platformie Sonar.
+
+✗ | **3.0** Linter dodany do kodu aplikacji serwerowej w hookach gita  
+✗ | **3.5** Wyeliminowane wszystkie bugi w kodzie w Sonarze (kod aplikacji serwerowej)  
+✗ | **4.0** Wyeliminowane wszystkie code smells w kodzie w Sonarze (kod aplikacji serwerowej)  
+✗ | **4.5** Wyeliminowane wszystkie podatności oraz błędy bezpieczeństwa w kodzie w Sonarze (kod aplikacji serwerowej)  
+✗ | **5.0** Wyeliminowane wszystkie błędy oraz zapaszki w kodzie aplikacji klienckiej  
