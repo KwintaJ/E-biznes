@@ -26,6 +26,7 @@ Aplikacja we frameworku Ktor | [Screen recording](https://github.com/KwintaJ/E-b
 ✓ | **5.0** Aplikacja obsługuje dodatkowo platformę Slack | [Commit](https://github.com/KwintaJ/E-biznes/commit/42d7b8d6545829c775f33a9ae122490dee97b733)  
 
 ## Zadanie 4 | Go  
+
 Projekt w echo w Go, modele z gorm, baza w sqlite.  
 
 ✓ | **3.0** Aplikację we frameworku echo w języku Go + kontroler Produktów zgodny z CRUD | [Commit](https://github.com/KwintaJ/E-biznes/commit/27b9e254cdd92c2595c73cc6e7227eca55032c77)  
@@ -34,7 +35,7 @@ Projekt w echo w Go, modele z gorm, baza w sqlite.
 ✓ | **4.5** Model kategorii i relacja między kategorią a produktem | [Commit](https://github.com/KwintaJ/E-biznes/commit/5d5db6fe4204bc4aaf08084ea1f6b2f36c135af3)  
 ✓ | **5.0** Zapytania pogrupowane w gorm’owe scope'y | [Commit](https://github.com/KwintaJ/E-biznes/commit/482d4cb9016065c16857c6937abecf7ec0661ac1)  
 
-## Zadanie 5 | React.js
+## Zadanie 5 | React.js  
 
 Aplikacja kliencka wykorzystująca bibliotekę React.js. Trzy komponenty: Produkty, Koszyk oraz Płatności. Koszyk oraz Płatności wysyłają do aplikacji serwerowej dane, a w Produktach dane o produktach są pobierane z aplikacji serwerowej. Aplikacja serwera w Go. Dane pomiędzy wszystkimi komponentami przesyłane za pomocą React hooks. | [Screen recording](https://github.com/KwintaJ/E-biznes/blob/main/Zadanie-5/Screen%20Recording%202026-04-22%20at%2022.44.59.mov)  
 
@@ -44,7 +45,7 @@ Aplikacja kliencka wykorzystująca bibliotekę React.js. Trzy komponenty: Produk
 ✓ | **4.5** Skrypt uruchamiający aplikację serwerową oraz kliencką na dockerze via docker-compose | [Commit](https://github.com/KwintaJ/E-biznes/commit/b7c64941777473de77b12e0a249aa06a24dd7e28)  
 ✓ | **5.0** Axios + nagłówki pod CORS | [Commit](https://github.com/KwintaJ/E-biznes/commit/3d8ad1fa3e8ce35f00e5421b75e0e7fffae600be)  
 
-## Zadanie 6 | Testy
+## Zadanie 6 | Testy  
 
 Ponad 20 przypadków testowych w Selenium (Python) do aplikacji webowych, zawierających 50 asercji. Możliwe uruchamianie na platformie Browserstack.  
 
@@ -54,12 +55,23 @@ Ponad 20 przypadków testowych w Selenium (Python) do aplikacji webowych, zawier
 ✓ | **4.5** Testy API, pokryte wszystkie endpointy (minimum jeden scenariusz negatywny per endpoint) | [Commit](https://github.com/KwintaJ/E-biznes/commit/1b02b3b25e740e61bc179356285e3fadfd484613)  
 ✓ | **5.0** Uruchamianie testów funkcjonalych na Browserstacku | [Github Actions](https://github.com/KwintaJ/E-biznes/blob/5aa4175440fcde01b9af7608711db36fbf357e16/.github/workflows/main.yml) | [Workflow run](https://github.com/KwintaJ/E-biznes/actions/runs/25381430627/job/74430516521)  
 
-## Zadanie 7 | Sonar
+## Zadanie 7 | Sonar  
 
 Testowanie aplikacji klient-serwer na platformie Sonar.
 
 ✗ | **3.0** Linter dodany do kodu aplikacji serwerowej w hookach gita  
-✗ | **3.5** Wyeliminowane wszystkie bugi w kodzie w Sonarze (kod aplikacji serwerowej)  
-✗ | **4.0** Wyeliminowane wszystkie code smells w kodzie w Sonarze (kod aplikacji serwerowej)  
-✗ | **4.5** Wyeliminowane wszystkie podatności oraz błędy bezpieczeństwa w kodzie w Sonarze (kod aplikacji serwerowej)  
+✗ | **3.5** Wyeliminowane wszystkie bugi w Sonarze (kod aplikacji serwerowej)  
+✗ | **4.0** Wyeliminowane wszystkie code smells w Sonarze (kod aplikacji serwerowej)  
+✗ | **4.5** Wyeliminowane wszystkie podatności oraz błędy bezpieczeństwa w Sonarze (kod aplikacji serwerowej)  
 ✗ | **5.0** Wyeliminowane wszystkie błędy oraz zapaszki w kodzie aplikacji klienckiej  
+
+## Zadanie 8 | Oauth2  
+
+Konfigurowanie klienta Oauth2. Dane o użytkowniku wraz z tokenem przechowywane po stronie bazy serwera, a nowy token (inny niż ten od dostawcy) wysłany do klienta (React); mechanizm sesji.  
+Klienci NIE są tworzeni bezpośrednio po stronie React'a; komunikacja: react-sewer-dostawca-serwer(via return uri)-react.  
+
+✗ | **3.0** Logowanie przez aplikację serwerową (bez Oauth2)  
+✗ | **3.5** Rejestracja przez aplikację serwerową (bez Oauth2)  
+✗ | **4.0** Logowanie via Google OAuth2  
+✗ | **4.5** Logowanie via Github OAuth2  
+✗ | **5.0** Zapisywanie danych logowania OAuth2 po stronie serwera  
