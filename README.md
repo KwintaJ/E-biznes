@@ -65,7 +65,7 @@ Testowanie aplikacji klient-serwer na platformie Sonar | [Repozytorium serwera](
 ✓ | **4.5** Wyeliminowane wszystkie podatności oraz błędy bezpieczeństwa w Sonarze (kod aplikacji serwerowej) | [Commit](https://github.com/KwintaJ/e-biznes-7-backend/commit/6f86e6bf22ba3b0ab0f3f02c9464bd467f260c6d)  
 ✓ | **5.0** Wyeliminowane wszystkie błędy oraz zapaszki w kodzie aplikacji klienckiej | [Commit 1](https://github.com/KwintaJ/e-biznes-7-frontend/commit/6d498a04719b92f1741538472596519d72577f33) | [Commit 2](https://github.com/KwintaJ/e-biznes-7-frontend/commit/a8d66245a1bebe501f453048408003f2e34ca7c4) | [Commit 3](https://github.com/KwintaJ/e-biznes-7-frontend/commit/8ccc74d01a87ee2e9a52d79dfb8e4285265b08cf) | [Commit 4](https://github.com/KwintaJ/e-biznes-7-frontend/commit/0de994740fb7f21ac5bf246040afa436df8a618c) | [Commit 5](https://github.com/KwintaJ/e-biznes-7-frontend/commit/3f43e3ae51d833bd4752d5062c422cb317b0d39c)  
 
-Badge z repozytorium serwera:
+Badge z repozytorium serwera:  
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=KwintaJ_e-biznes-7-backend&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=KwintaJ_e-biznes-7-backend)  
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=KwintaJ_e-biznes-7-backend&metric=bugs)](https://sonarcloud.io/summary/new_code?id=KwintaJ_e-biznes-7-backend)  
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=KwintaJ_e-biznes-7-backend&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=KwintaJ_e-biznes-7-backend)  
