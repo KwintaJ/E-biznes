@@ -1,16 +1,16 @@
 import { useState } from 'react';
 
-export default function Login({ onLoginSuccess, switchToRegister }) {
+export default function Register({ onRegisterSuccess, switchToLogin }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setMessage('Logowanie...');
+    setMessage('Wysyłanie...');
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/auth/login`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -21,13 +21,9 @@ export default function Login({ onLoginSuccess, switchToRegister }) {
       const data = await response.json();
 
       if (response.ok) {
-        setMessage('Zalogowano pomyślnie!');
-        
-        localStorage.setItem('token', data.token);
-        
-        if (onLoginSuccess) {
-          onLoginSuccess({ email: data.user.email });
-        }
+        setMessage(`Zarejestrowano użytkownika o ID: ${data.userId}`);
+        setEmail('');
+        setPassword('');
       } else {
         setMessage(`Błąd: ${data.error}`);
       }
@@ -39,7 +35,7 @@ export default function Login({ onLoginSuccess, switchToRegister }) {
 
   return (
     <div style={{ maxWidth: '300px', margin: '50px auto', textAlign: 'center' }}>
-      <h2>Logowanie</h2>
+      <h2>Rejestracja</h2>
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
         <input
           type="email"
@@ -55,19 +51,18 @@ export default function Login({ onLoginSuccess, switchToRegister }) {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit">Zaloguj się</button>
+        <button type="submit">Zarejestruj się</button>
       </form>
-      {message && <p style={{ marginTop: '10px', color: message.startsWith('Błąd') ? 'red' : 'green' }}>{message}</p>}
-      
+      {message && <p>{message}</p>}
       <div style={{ marginTop: '20px', fontSize: '0.9rem' }}>
-        Nie masz jeszcze konta?{' '}
-        <button 
-          onClick={switchToRegister}
-          style={{ background: 'none', border: 'none', color: '#007bff', cursor: 'pointer', textDecoration: 'underline', padding: 0 }}
-        >
-          Zarejestruj się
-        </button>
-      </div>
+      Masz już konto?{' '}
+      <button 
+        onClick={switchToLogin}
+        style={{ background: 'none', border: 'none', color: '#007bff', cursor: 'pointer', textDecoration: 'underline', padding: 0 }}
+      >
+        Zaloguj się
+     </button>
+   </div>
     </div>
   );
 }

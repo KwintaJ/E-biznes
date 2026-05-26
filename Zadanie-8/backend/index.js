@@ -17,6 +17,37 @@ app.use(cors({
 }));
 app.use(express.json());
 
+// --- rejestracja ---
+app.post('/api/auth/register', async (req, res) => {
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    return res.status(400).json({ error: 'Email i hasło są wymagane.' });
+  }
+
+  try {
+    const existingUser = await prisma.user.findUnique({ where: { email } });
+    if (existingUser) {
+      return res.status(400).json({ error: 'Użytkownik o takim adresie e-mail już istnieje.' });
+    }
+
+    const saltRounds = 10;
+    const passwordHash = await bcrypt.hash(password, saltRounds);
+
+    const newUser = await prisma.user.create({
+      data: {
+        email,
+        passwordHash,
+      },
+    });
+
+    res.status(201).json({ message: 'Użytkownik zarejestrowany pomyślnie!', userId: newUser.id });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Wystąpił błąd serwera podczas rejestracji.' });
+  }
+});
+
 // --- logowanie ---
 app.post('/api/auth/login', async (req, res) => {
   const { email, password } = req.body;
