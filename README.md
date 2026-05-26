@@ -80,8 +80,8 @@ Badge z repozytorium klienta:
 Konfigurowanie klienta Oauth2. Dane o użytkowniku wraz z tokenem przechowywane po stronie bazy serwera, a nowy token (inny niż ten od dostawcy) wysłany do klienta (React); mechanizm sesji.  
 Klienci NIE są tworzeni bezpośrednio po stronie React'a; komunikacja: react-sewer-dostawca-serwer(via return uri)-react.  
 
-✗ | **3.0** Logowanie przez aplikację serwerową (bez Oauth2)  
-✗ | **3.5** Rejestracja przez aplikację serwerową (bez Oauth2)  
+✓ | **3.0** Logowanie przez aplikację serwerową (bez Oauth2) | [Commit](https://github.com/KwintaJ/E-biznes/commit/a8507a1deb81a3ad8bdb0158f11bd0ed5527990b)  
+✓ | **3.5** Rejestracja przez aplikację serwerową (bez Oauth2) | [Commit](https://github.com/KwintaJ/E-biznes/commit/e0ee84a47de5110a5f6f3605f9522cc853824671)  
 ✗ | **4.0** Logowanie via Google OAuth2  
 ✗ | **4.5** Logowanie via Github OAuth2  
 ✗ | **5.0** Zapisywanie danych logowania OAuth2 po stronie serwera  
