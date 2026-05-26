@@ -75,7 +75,6 @@ Badge z repozytorium klienta:
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=KwintaJ_e-biznes-7-frontend&metric=bugs)](https://sonarcloud.io/summary/new_code?id=KwintaJ_e-biznes-7-frontend)  
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=KwintaJ_e-biznes-7-frontend&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=KwintaJ_e-biznes-7-frontend)  
 
-
 ## Zadanie 8 | Oauth2  
 
 Konfigurowanie klienta Oauth2. Dane o użytkowniku wraz z tokenem przechowywane po stronie bazy serwera, a nowy token (inny niż ten od dostawcy) wysłany do klienta (React); mechanizm sesji.  
@@ -86,3 +85,13 @@ Klienci NIE są tworzeni bezpośrednio po stronie React'a; komunikacja: react-se
 ✗ | **4.0** Logowanie via Google OAuth2  
 ✗ | **4.5** Logowanie via Github OAuth2  
 ✗ | **5.0** Zapisywanie danych logowania OAuth2 po stronie serwera  
+
+## Zadanie 9 | ollama  
+
+Rozszerzenie funkcjonalności wcześniej stworzonego bota. Aplikacja frontendowa łączy się z osobnym serwisem w Pythonie, który analizuje tekst od użytkownika i przesyła zapytanie do LLM, a następnie przesyła odpowiedź do użytkownika. Rozmowy poza zakresem LLMa przesyłane via Discord do obsługi klienta.
+
+✗ | **3.0** Serwis do łączenia się z LLM ollama  
+✗ | **3.5** Połączenie serwisu z interfejsem frontendowym via Kotlin (zadanie 3)  
+✗ | **4.0** Lista 5 różnych otwarć oraz zamknięć rozmowy  
+✗ | **4.5** Filtrowanie po zagadnieniach związanych ze sklepem do LLM  
+✗ | **5.0** Filtrowanie odpowiedzi po sentymencie  
