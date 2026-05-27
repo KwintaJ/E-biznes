@@ -12,11 +12,15 @@ function App() {
     const query = new URLSearchParams(window.location.search);
     const token = query.get('token');
     const email = query.get('email');
+    const name = query.get('name');
     const error = query.get('error');
 
     if (token && email) {
       localStorage.setItem('token', token);
-      setUser({ email: email });
+      setUser({ 
+        email: email,
+        name: name ? decodeURIComponent(name) : null
+      });
 
       window.history.replaceState({}, document.title, window.location.pathname);
     } else if (error) {

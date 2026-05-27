@@ -143,11 +143,13 @@ app.get('/api/auth/google/callback', async (req, res) => {
     const user = await prisma.user.upsert({
       where: { email: googleUser.email },
       update: {
+        name: googleUser.name || null,
         googleId: googleUser.id,
         googleToken: googleAccessToken,
       },
       create: {
         email: googleUser.email,
+        name: googleUser.name || null,
         googleId: googleUser.id,
         googleToken: googleAccessToken,
       },
@@ -155,12 +157,12 @@ app.get('/api/auth/google/callback', async (req, res) => {
 
     // jwt token
     const token = jwt.sign(
-      { userId: user.id, email: user.email },
+      { userId: user.id, email: user.email, name: user.name },
       JWT_SECRET,
       { expiresIn: '1h' }
     );
 
-    res.redirect(`${process.env.FRONTEND_URL}?token=${token}&email=${user.email}`);
+  res.redirect(`${process.env.FRONTEND_URL}?token=${token}&email=${user.email}&name=${encodeURIComponent(user.name || '')}`);
 
   } catch (error) {
     console.error('Błąd podczas logowania Google:', error);
@@ -240,14 +242,18 @@ app.get('/api/auth/github/callback', async (req, res) => {
     }
 
     // user to prisma
+    const githubName = githubUser.name || githubUser.login;
+
     const user = await prisma.user.upsert({
       where: { email: email },
       update: {
+        name: githubName,
         githubId: String(githubUser.id),
         githubToken: githubAccessToken,
       },
       create: {
         email: email,
+        name: githubName,
         githubId: String(githubUser.id),
         githubToken: githubAccessToken,
       },
@@ -255,12 +261,12 @@ app.get('/api/auth/github/callback', async (req, res) => {
 
     // jwt token
     const token = jwt.sign(
-      { userId: user.id, email: user.email },
-      process.env.JWT_SECRET || 'tymczasowy_sekret',
+      { userId: user.id, email: user.email, name: user.name },
+      JWT_SECRET,
       { expiresIn: '1h' }
     );
 
-    res.redirect(`${process.env.FRONTEND_URL}?token=${token}&email=${user.email}`);
+    res.redirect(`${process.env.FRONTEND_URL}?token=${token}&email=${user.email}&name=${encodeURIComponent(user.name || '')}`);
 
   } catch (error) {
     console.error('Błąd podczas logowania GitHub:', error);

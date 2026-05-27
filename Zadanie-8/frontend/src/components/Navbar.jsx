@@ -8,8 +8,13 @@ export default function Navbar({ user, onLogout }) {
       <div className="user-menu">
         {user ? (
           <>
-            <span>Jesteś zalogowany jako: <strong>{user.email}</strong>   </span>
-            <button onClick={onLogout}>Wyloguj się</button>
+            <span>
+              Jesteś zalogowany jako:{' '}
+              <strong>
+                {user.name ? `${user.name} (${user.email})` : user.email}
+              </strong>
+            </span>
+            <button onClick={onLogout} style={{ marginLeft: '15px' }}>Wyloguj się</button>
           </>
         ) : (
           <span>Nie jesteś zalogowany</span>
