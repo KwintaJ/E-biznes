@@ -167,3 +167,103 @@ app.get('/api/auth/google/callback', async (req, res) => {
     res.redirect(`${process.env.FRONTEND_URL}?error=oauth_failed`);
   }
 });
+
+// --- logowanie OAuth2 GitHub: redirect to GitHub ---
+app.get('/api/auth/github', (req, res) => {
+  const rootUrl = 'https://github.com/login/oauth/authorize';
+  const options = {
+    client_id: process.env.GITHUB_CLIENT_ID,
+    redirect_uri: process.env.GITHUB_REDIRECT_URI,
+    scope: 'user:email',
+  };
+
+  const qs = new URLSearchParams(options);
+  res.redirect(`${rootUrl}?${qs.toString()}`);
+});
+
+// --- logowanie OAuth2 GitHub: callback from GitHub ---
+app.get('/api/auth/github/callback', async (req, res) => {
+  const code = req.query.code;
+
+  if (!code) {
+    return res.status(400).send('Brak kodu autoryzacyjnego z GitHub.');
+  }
+
+  try {
+    // github token
+    const tokenResponse = await fetch('https://github.com/login/oauth/access_token', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        client_id: process.env.GITHUB_CLIENT_ID,
+        client_secret: process.env.GITHUB_CLIENT_SECRET,
+        code: code,
+        redirect_uri: process.env.GITHUB_REDIRECT_URI
+      })
+    });
+
+    const tokenData = await tokenResponse.json();
+    const githubAccessToken = tokenData.access_token;
+
+    if (!githubAccessToken) {
+      throw new Error('Nie udało się uzyskać access_token z GitHub');
+    }
+
+    // user data
+    const userResponse = await fetch('https://api.github.com/user', {
+      headers: {
+        'Authorization': `Bearer ${githubAccessToken}`,
+        'User-Agent': 'GymApp-NodeJS-Server'
+      }
+    });
+    const githubUser = await userResponse.json();
+
+    // find email
+    let email = githubUser.email;
+    if (!email) {
+      const emailsResponse = await fetch('https://api.github.com/user/emails', {
+        headers: {
+          'Authorization': `Bearer ${githubAccessToken}`,
+          'User-Agent': 'GymApp-NodeJS-Server'
+        }
+      });
+      const emails = await emailsResponse.json();
+      const primaryEmailObj = emails.find(e => e.primary && e.verified) || emails[0];
+      email = primaryEmailObj ? primaryEmailObj.email : null;
+    }
+
+    if (!email) {
+      return res.status(400).send('Nie udało się pobrać adresu email z profilu GitHub.');
+    }
+
+    // user to prisma
+    const user = await prisma.user.upsert({
+      where: { email: email },
+      update: {
+        githubId: String(githubUser.id),
+        githubToken: githubAccessToken,
+      },
+      create: {
+        email: email,
+        githubId: String(githubUser.id),
+        githubToken: githubAccessToken,
+      },
+    });
+
+    // jwt token
+    const token = jwt.sign(
+      { userId: user.id, email: user.email },
+      process.env.JWT_SECRET || 'tymczasowy_sekret',
+      { expiresIn: '1h' }
+    );
+
+    res.redirect(`${process.env.FRONTEND_URL}?token=${token}&email=${user.email}`);
+
+  } catch (error) {
+    console.error('Błąd podczas logowania GitHub:', error);
+    res.redirect(`${process.env.FRONTEND_URL}?error=oauth_failed`);
+  }
+});

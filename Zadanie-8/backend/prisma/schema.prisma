@@ -9,8 +9,10 @@ datasource db {
 model User {
   id           String   @id @default(uuid())
   email        String   @unique
-  passwordHash String? 
+  passwordHash String?
   googleId     String?  @unique
-  googleToken  String?  
+  googleToken  String?
+  githubId     String?  @unique
+  githubToken  String?
   createdAt    DateTime @default(now())
 }
