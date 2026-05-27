@@ -68,6 +68,23 @@ export default function Login({ onLoginSuccess, switchToRegister }) {
           Zarejestruj się
         </button>
       </div>
+
+      <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+        <p>lub</p>
+        <a 
+          href={`${import.meta.env.VITE_API_URL}/auth/google`}
+          style={{
+            backgroundColor: '#db4437',
+            color: 'white',
+            padding: '10px 20px',
+            textDecoration: 'none',
+            borderRadius: '8px',
+            fontWeight: '600'
+          }}
+        >
+          Zaloguj przez Google
+        </a>
+      </div>
     </div>
   );
 }

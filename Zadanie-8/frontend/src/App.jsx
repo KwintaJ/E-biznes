@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Register from './components/Register';
 import Login from './components/Login';
@@ -6,6 +6,23 @@ import Login from './components/Login';
 function App() {
   const [user, setUser] = useState(null);
   const [showLogin, setShowLogin] = useState(true);
+
+  // OAuth2
+  useEffect(() => {
+    const query = new URLSearchParams(window.location.search);
+    const token = query.get('token');
+    const email = query.get('email');
+    const error = query.get('error');
+
+    if (token && email) {
+      localStorage.setItem('token', token);
+      setUser({ email: email });
+
+      window.history.replaceState({}, document.title, window.location.pathname);
+    } else if (error) {
+      alert('Wystąpił błąd logowania przez Google.');
+    }
+  }, []);
 
   const handleLogout = () => {
     setUser(null);
