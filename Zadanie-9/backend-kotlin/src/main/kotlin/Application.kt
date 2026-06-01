@@ -3,8 +3,8 @@ package com.shop
 import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.engine.cio.*
-import io.ktor.client.plugins.contentnegotiation.ContentNegotiation as ClientContentNegotiation
 import io.ktor.client.plugins.HttpTimeout
+import io.ktor.client.plugins.contentnegotiation.ContentNegotiation as ClientContentNegotiation
 import io.ktor.client.request.*
 import io.ktor.http.*
 import io.ktor.serialization.kotlinx.json.*
@@ -48,9 +48,17 @@ fun main() {
         }
 
         routing {
+            get("/welcome") {
+                try {
+                    val pythonResponse: BotResponse = httpClient.get("http://127.0.0.1:8000/api/welcome").body()
+                    call.respond(pythonResponse)
+                } catch (e: Exception) {
+                    call.respond(BotResponse(reply = "Błąd pobierania powitania: ${e.localizedMessage}"))
+                }
+            }
+
             post("/chat") {
                 val userRequest = call.receive<UserMessage>()
-
                 try {
                     val pythonResponse: BotResponse = httpClient.post("http://127.0.0.1:8000/api/chat") {
                         contentType(ContentType.Application.Json)
