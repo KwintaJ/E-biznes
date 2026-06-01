@@ -92,6 +92,6 @@ Rozszerzenie funkcjonalności wcześniej stworzonego bota. Aplikacja frontendowa
 
 ✓ | **3.0** Serwis do łączenia się z LLM ollama | [Commit](https://github.com/KwintaJ/E-biznes/commit/a2321be93545eab9e4b296d3b49a095b6ea454f0)  
 ✓ | **3.5** Połączenie serwisu z interfejsem frontendowym via Kotlin | [Commit](https://github.com/KwintaJ/E-biznes/commit/8268846b45793b49490396a7ba3342d3680facf8)  
-✗ | **4.0** Lista 5 różnych otwarć oraz zamknięć rozmowy  
+✓ | **4.0** Lista 5 różnych otwarć oraz zamknięć rozmowy | [Commit](https://github.com/KwintaJ/E-biznes/commit/af8a3bbea788a7f0996396115ef5d320403bbc2f)  
 ✗ | **4.5** Filtrowanie po zagadnieniach związanych ze sklepem do LLM  
 ✗ | **5.0** Filtrowanie odpowiedzi po sentymencie  
