@@ -90,8 +90,8 @@ Klienci NIE są tworzeni bezpośrednio po stronie React'a; komunikacja: react-se
 
 Rozszerzenie funkcjonalności wcześniej stworzonego bota. Aplikacja frontendowa łączy się z osobnym serwisem w Pythonie, który analizuje tekst od użytkownika i przesyła zapytanie do LLM, a następnie przesyła odpowiedź do użytkownika. Rozmowy poza zakresem LLMa przesyłane via Discord do obsługi klienta.
 
-✗ | **3.0** Serwis do łączenia się z LLM ollama  
-✗ | **3.5** Połączenie serwisu z interfejsem frontendowym via Kotlin (zadanie 3)  
+✓ | **3.0** Serwis do łączenia się z LLM ollama | [Commit](https://github.com/KwintaJ/E-biznes/commit/a2321be93545eab9e4b296d3b49a095b6ea454f0)  
+✓ | **3.5** Połączenie serwisu z interfejsem frontendowym via Kotlin | [Commit](https://github.com/KwintaJ/E-biznes/commit/8268846b45793b49490396a7ba3342d3680facf8)  
 ✗ | **4.0** Lista 5 różnych otwarć oraz zamknięć rozmowy  
 ✗ | **4.5** Filtrowanie po zagadnieniach związanych ze sklepem do LLM  
 ✗ | **5.0** Filtrowanie odpowiedzi po sentymencie  
