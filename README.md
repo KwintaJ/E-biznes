@@ -95,3 +95,11 @@ Rozszerzenie funkcjonalności wcześniej stworzonego bota. Aplikacja frontendowa
 ✓ | **4.0** Lista 5 różnych otwarć oraz zamknięć rozmowy | [Commit 1](https://github.com/KwintaJ/E-biznes/commit/af8a3bbea788a7f0996396115ef5d320403bbc2f) | [Commit 2](https://github.com/KwintaJ/E-biznes/commit/2c66e9c08618e9a9a3b2f5f1fa024c87b24bce66)  
 ✗ | **4.5** Filtrowanie po zagadnieniach związanych ze sklepem do LLM  
 ✗ | **5.0** Filtrowanie odpowiedzi po sentymencie  
+
+## Zadanie 10 | Cloud  
+
+✓ | **3.0** Należy stworzyć odpowiednie instancje po stronie chmury na dockerze | [Commit](https://github.com/KwintaJ/E-biznes/commit/db1dc07dcfa16c0109bf6b85706569860dd0be82) | [Google Cloud Instance](http://35.222.44.103:8080)  
+✗ | **3.5** Stworzyć odpowiedni pipeline w Github Actions do budowania aplikacji (np. via fatjar)
+✗ | **4.0** Dodać notyfikację mailową o wynikach z sonara
+✗ | **4.5** Dodać krok z deploymentem aplikacji klienckiej na chmurę (obie ze sobą rozmawiają)
+✗ | **5.0** Dodać uruchomienie regresyjnych testów automatycznych (funkcjonalnych) jako krok w Actions w Browserstacku
