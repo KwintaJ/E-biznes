@@ -98,7 +98,7 @@ Rozszerzenie funkcjonalności wcześniej stworzonego bota. Aplikacja frontendowa
 
 ## Zadanie 10 | Cloud  
 
-✓ | **3.0** Należy stworzyć odpowiednie instancje po stronie chmury na dockerze | [Commit](https://github.com/KwintaJ/E-biznes/commit/db1dc07dcfa16c0109bf6b85706569860dd0be82) | [Google Cloud Instance](http://35.222.44.103:8080)  
+✓ | **3.0** Należy stworzyć odpowiednie instancje po stronie chmury na dockerze | [Commit](https://github.com/KwintaJ/E-biznes/commit/db1dc07dcfa16c0109bf6b85706569860dd0be82) | [Google Cloud Instance](http://35.222.44.103:8080) | [Screen recording](https://github.com/KwintaJ/E-biznes/blob/main/Zadanie-10/Screen%20Recording.mov)  
 ✗ | **3.5** Stworzyć odpowiedni pipeline w Github Actions do budowania aplikacji (np. via fatjar)  
 ✗ | **4.0** Dodać notyfikację mailową o wynikach z sonara  
 ✗ | **4.5** Dodać krok z deploymentem aplikacji klienckiej na chmurę (obie ze sobą rozmawiają)  
